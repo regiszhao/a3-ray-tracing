@@ -1,6 +1,7 @@
 #include "Triangle.h"
 #include "Ray.h"
 #include <Eigen/Geometry>
+#include <Eigen/Dense>
 #include <iostream>
 
 bool Triangle::intersect(
