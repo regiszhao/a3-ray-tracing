@@ -20,7 +20,17 @@ int main(int argc, char * argv[])
   std::vector< std::shared_ptr<Light> > lights;
   // Read a camera and scene description from given .json file
   read_json(
-    argc<=1?"../data/sphere-and-plane.json":argv[1],
+    //argc<=1?"../../../data/sphere-and-plane.json":argv[1],
+    //argc<=1?"../../../data/bunny.json":argv[1],
+    //argc<=1?"../../../data/inside-a-sphere.json":argv[1],
+    //argc<=1?"../../../data/mirror.json":argv[1],
+    //argc<=1?"../../../data/sphere.json":argv[1],
+    //argc<=1?"../../../data/sphere-large-change.json":argv[1],
+    //argc<=1?"../../../data/sphere-packing.json":argv[1],
+    //argc<=1?"../../../data/sphere-small-change.json":argv[1],
+    //argc<=1?"../../../data/triangle.json":argv[1],
+    //argc<=1?"../../../data/two-spheres-and-plane.json":argv[1],
+    argc<=1?"../../../src/creative.json":argv[1],
     camera,
     objects,
     lights);
@@ -40,6 +50,8 @@ int main(int argc, char * argv[])
       Ray ray;
       viewing_ray(camera,i,j,width,height,ray);
       
+      std::cout << "ij " << i << " " << j << "\n";
+
       // Shoot ray and collect color
       raycolor(ray,1.0,objects,lights,0,rgb);
 
