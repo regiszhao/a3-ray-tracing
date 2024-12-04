@@ -21,7 +21,7 @@ int main(int argc, char * argv[])
   // Read a camera and scene description from given .json file
   read_json(
     //argc<=1?"../../../data/sphere-and-plane.json":argv[1],
-    //argc<=1?"../../../data/bunny.json":argv[1],
+    argc<=1?"../../../data/bunny.json":argv[1],
     //argc<=1?"../../../data/inside-a-sphere.json":argv[1],
     //argc<=1?"../../../data/mirror.json":argv[1],
     //argc<=1?"../../../data/sphere.json":argv[1],
@@ -30,7 +30,7 @@ int main(int argc, char * argv[])
     //argc<=1?"../../../data/sphere-small-change.json":argv[1],
     //argc<=1?"../../../data/triangle.json":argv[1],
     //argc<=1?"../../../data/two-spheres-and-plane.json":argv[1],
-    argc<=1?"../../../src/creative.json":argv[1],
+    //argc<=1?"../../../src/creative.json":argv[1],
     camera,
     objects,
     lights);

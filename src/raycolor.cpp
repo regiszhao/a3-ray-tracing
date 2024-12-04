@@ -14,12 +14,14 @@ bool raycolor(
 {
   ////////////////////////////////////////////////////////////////////////////
 
+	//std::cout << "called " << num_recursive_calls << "\n";
 	// initialize rgb vector as background colour (black) to output
 	rgb = Eigen::Vector3d(0,0,0);
 
 	// 2 base cases: 1) reached max recursion depth, 2) ray has no hits
 	// base case 1:
 	if (num_recursive_calls > 10) { // arbitrary max recursion depth
+		//std::cout << "num rec calls " << num_recursive_calls << "\n";
 		return false;
 	}
 
@@ -51,9 +53,9 @@ bool raycolor(
 
 			//std::cout << "we are gonna recurse";
 			// if reflected ray hits something, then update rgb
-			//if (raycolor(reflected_ray, 0.0001, objects, lights, num_recursive_calls + 1, mirror_rgb)) {
-			//	rgb += (km.array() * mirror_rgb.array()).matrix();
-			//}
+			if (raycolor(reflected_ray, 0.0001, objects, lights, num_recursive_calls + 1, mirror_rgb)) {
+				rgb += (km.array() * mirror_rgb.array()).matrix();
+			}
 		}
 		return true;
 	}
